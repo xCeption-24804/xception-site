@@ -1,9 +1,9 @@
-import { MyNavbar } from "./layouts/MyNavbar";
+import { Header } from "./layouts/Header";
 
 function App() {
   return (
     <>
-      <MyNavbar />
+      <Header />
     </>
   );
 }
