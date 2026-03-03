@@ -4,15 +4,18 @@ import {
   NavbarCollapse,
   NavbarLink,
   NavbarToggle,
+  DarkThemeToggle,
 } from "flowbite-react";
 import { Logo } from "../components/Logo";
 
 export function Header() {
   return (
-    <Navbar fluid rounded>
+    <Navbar>
       <NavbarBrand href="https://flowbite-react.com">
         <Logo />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white ml-3">xCeption</span>
+        <span className="ml-3 self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          xCeption
+        </span>
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
@@ -24,6 +27,7 @@ export function Header() {
         <NavbarLink href="#">Plans/Goals</NavbarLink>
         <NavbarLink href="#">Contact us</NavbarLink>
       </NavbarCollapse>
+      <DarkThemeToggle />
     </Navbar>
   );
 }
