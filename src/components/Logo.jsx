@@ -11,7 +11,7 @@ export function Logo() {
       viewBox="0 0 342 342"
       enable-background="new 0 0 342 342"
       xml:space="preserve"
-      className="h-9 w-9 *:fill-black dark:*:fill-white"
+      className="h-9 w-9 shrink-0 *:fill-white"
     >
       <path
         fill="#FBFAFA"
