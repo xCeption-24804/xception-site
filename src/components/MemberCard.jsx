@@ -19,7 +19,7 @@ export function MemberCard({ member, index = 0 }) {
           boxShadow: "0 0 0 1px rgb(94 231 255 / 0.45), 0 0 36px -6px rgb(94 231 255 / 0.35)",
         }}
       />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-black/40">
+      <div className="relative aspect-square overflow-hidden rounded-xl bg-black/40">
         <img
           src={member.photo}
           alt=""

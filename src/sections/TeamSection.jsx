@@ -1,12 +1,20 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../components/SectionWrapper";
 import { Grid } from "../components/Grid";
 import { Card } from "../components/Card";
+import { Button } from "../components/Button";
 import { PandaMark } from "../components/PandaMark";
 import { MemberCard } from "../components/MemberCard";
 import { mission, teamStory, achievements, teamValues, members } from "../data/team";
 
+const INITIAL_MEMBERS = 3;
+
 export function TeamSection() {
+  const [showAllMembers, setShowAllMembers] = useState(false);
+  const hasMoreMembers = members.length > INITIAL_MEMBERS;
+  const visibleMembers = showAllMembers ? members : members.slice(0, INITIAL_MEMBERS);
+
   return (
     <SectionWrapper
       id="team"
@@ -18,11 +26,11 @@ export function TeamSection() {
       }
       title={
         <span className="inline-flex flex-wrap items-center gap-2">
-          Structure, craft, and the people behind the machine
+          ABOUT US
           <PandaMark className="text-[0.5em] opacity-30" />
         </span>
       }
-      subtitle="We are built like a serious engineering org: clear ownership, public accountability, and a student-led culture that still feels human."
+      subtitle='"Machines may be made of steel and silicon, but the soul of robotics is in the creativity of its creators."'
     >
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
         <motion.div
@@ -107,10 +115,22 @@ export function TeamSection() {
           Members
         </motion.h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {members.map((m, i) => (
+          {visibleMembers.map((m, i) => (
             <MemberCard key={m.id} member={m} index={i} />
           ))}
         </div>
+        {hasMoreMembers && (
+          <div className="mt-8 flex justify-center">
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => setShowAllMembers((v) => !v)}
+              aria-expanded={showAllMembers}
+            >
+              {showAllMembers ? "Show fewer" : `Show all members (${members.length})`}
+            </Button>
+          </div>
+        )}
       </div>
     </SectionWrapper>
   );
