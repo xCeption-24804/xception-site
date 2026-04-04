@@ -32,8 +32,8 @@ export function EventsSection() {
           Events
         </span>
       }
-      title="Where the program shows up—in competition and in the community."
-      subtitle="A living calendar of builds, outreach, and workshops. The featured event anchors the season narrative; the grid captures momentum week to week."
+      title="Events are where our team grows its real impact."
+      subtitle="We participate in competitions, organize outreach, support STEM initiatives, and create educational spaces that connect robotics with a wider student audience."
     >
       <motion.article
         className="glass-panel relative overflow-hidden rounded-2xl md:flex"

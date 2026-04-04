@@ -43,9 +43,9 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.28 }}
             >
-              <Button href="#sponsors">Partner with us</Button>
-              <Button href="#robot" variant="secondary">
-                See the robot
+              <Button to="/#sponsors">Partner with us</Button>
+              <Button to="/robot" variant="secondary">
+                Hardware &amp; software
               </Button>
             </motion.div>
           </div>

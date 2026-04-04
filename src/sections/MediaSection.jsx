@@ -27,8 +27,8 @@ export function MediaSection() {
           Credibility
         </span>
       }
-      title="Media & social proof—third-party validation, on the record."
-      subtitle="Press mentions and high-signal posts in one place. Filter to see how the story lands in different channels."
+      title="Media is one of the ways we scale our impact beyond competitions."
+      subtitle="We use content not only to document our journey, but to promote robotics, share resources, attract attention to STEM, and create value for future students and partners."
     >
       <div
         className="mb-10 flex flex-wrap gap-2 border-b border-white/10 pb-4"

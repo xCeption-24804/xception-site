@@ -1,20 +1,12 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../components/SectionWrapper";
 import { Grid } from "../components/Grid";
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
 import { PandaMark } from "../components/PandaMark";
-import { MemberCard } from "../components/MemberCard";
 import { mission, teamStory, achievements, teamValues, members } from "../data/team";
 
-const INITIAL_MEMBERS = 3;
-
 export function TeamSection() {
-  const [showAllMembers, setShowAllMembers] = useState(false);
-  const hasMoreMembers = members.length > INITIAL_MEMBERS;
-  const visibleMembers = showAllMembers ? members : members.slice(0, INITIAL_MEMBERS);
-
   return (
     <SectionWrapper
       id="team"
@@ -103,35 +95,22 @@ export function TeamSection() {
         </Grid>
       </div>
 
-      <div className="mt-14 md:mt-16">
-        <motion.h3
-          className="mb-8 inline-flex items-center gap-2 font-display text-2xl font-bold text-white md:text-3xl"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-        >
+      <motion.div
+        className="glass-panel mt-14 flex flex-col items-center gap-5 rounded-2xl p-[var(--spacing-card-pad)] text-center md:mt-16"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45 }}
+      >
+        <h3 className="inline-flex items-center gap-2 font-display text-xl font-semibold text-white md:text-2xl">
           <PandaMark />
           Members
-        </motion.h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {visibleMembers.map((m, i) => (
-            <MemberCard key={m.id} member={m} index={i} />
-          ))}
-        </div>
-        {hasMoreMembers && (
-          <div className="mt-8 flex justify-center">
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() => setShowAllMembers((v) => !v)}
-              aria-expanded={showAllMembers}
-            >
-              {showAllMembers ? "Show fewer" : `Show all members (${members.length})`}
-            </Button>
-          </div>
-        )}
-      </div>
+        </h3>
+        <p className="max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
+          {members.length} students across programming, engineering, drive, design, and PR.
+        </p>
+        <Button to="/members">View full roster</Button>
+      </motion.div>
     </SectionWrapper>
   );
 }

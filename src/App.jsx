@@ -1,33 +1,17 @@
-import { Header } from "./layouts/Header";
-import { HeroSection } from "./sections/HeroSection";
-import { TeamSection } from "./sections/TeamSection";
-import { RobotSection } from "./sections/RobotSection";
-import { EventsSection } from "./sections/EventsSection";
-import { MediaSection } from "./sections/MediaSection";
-import { VideosSection } from "./sections/VideosSection";
-import { OutreachSection } from "./sections/OutreachSection";
-import { SponsorsSection } from "./sections/SponsorsSection";
-import { ContactSection } from "./sections/ContactSection";
-import { Footer } from "./sections/Footer";
+import { Routes, Route } from "react-router-dom";
+import { RootLayout } from "./layouts/RootLayout";
+import { HomePage } from "./pages/HomePage";
+import { MembersPage } from "./pages/MembersPage";
+import { HardwarePage } from "./pages/HardwarePage";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <HeroSection />
-        <TeamSection />
-        <RobotSection />
-        <EventsSection />
-        <MediaSection />
-        <VideosSection />
-        <OutreachSection />
-        <SponsorsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<RootLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/members" element={<MembersPage />} />
+        <Route path="/robot" element={<HardwarePage />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Container } from "../components/Container";
 import { navLinks, teamName } from "../data/site";
 
@@ -18,10 +19,10 @@ export function Footer() {
         <nav aria-label="Footer">
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/60">
             {navLinks.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="transition-colors hover:text-accent">
+              <li key={l.to}>
+                <Link to={l.to} className="transition-colors hover:text-accent">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

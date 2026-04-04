@@ -2,14 +2,15 @@ export const teamName = "xCeption";
 export const teamTagline = "FIRST Tech Challenge";
 
 export const navLinks = [
-  { href: "#team", label: "Team" },
-  { href: "#robot", label: "Robot" },
-  { href: "#events", label: "Events" },
-  { href: "#media", label: "Media" },
-  { href: "#videos", label: "Video" },
-  { href: "#outreach", label: "Impact" },
-  { href: "#sponsors", label: "Sponsors" },
-  { href: "#contact", label: "Contact" },
+  { to: "/#team", label: "Team" },
+  { to: "/members", label: "Members" },
+  { to: "/robot", label: "Hardware & software" },
+  { to: "/#events", label: "Events" },
+  { to: "/#media", label: "Media" },
+  { to: "/#videos", label: "Video" },
+  { to: "/#outreach", label: "Impact" },
+  { to: "/#sponsors", label: "Sponsors" },
+  { to: "/#contact", label: "Contact" },
 ];
 
 export const stats = [
@@ -50,16 +51,16 @@ export const robotHighlights = [
 
 export const outreach = [
   {
-    title: "STEM nights",
-    body: "Hands-on demos that make controls tangible: drive practice, CAD walkthroughs, and student Q&A.",
+    title: "Youtube channel",
+    body: "The xCeption FTC YouTube channel (@xCeption24804) features match recordings, vlogs, tutorials, and entertaining content to attract new viewers and promote robotics.",
   },
   {
-    title: "Mentor pipeline",
-    body: "Pairing veterans with rookies so design reviews and code reviews become teaching moments.",
+    title: "GIRLS IN STEM",
+    body: "We are organizing a two-week STEM intensive for girls focused on robotics, programming, web development, design, and engineering skills.",
   },
   {
-    title: "Community presence",
-    body: "Visible, professional representation at school events and regional partner organizations.",
+    title: "XLNC Family",
+    body: "To ensure long-term community growth, we provide foundational guidance and funding to the 5 teams, maintain consistent, rigorous communication with the 7 teams we have mentored.",
   },
 ];
 

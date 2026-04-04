@@ -1,52 +1,56 @@
+import sparkMind from '../assets/sparkmind.jpg'
+import ladies from '../assets/ladies.jpg'
+import sixGraders from '../assets/6graders.png'
+
 /** @typedef {'Competition' | 'Outreach' | 'Workshop'} EventTag */
 
 /** @type {{ id: string; title: string; date: string; description: string; image: string; tag: EventTag; featured?: boolean }[]} */
 export const events = [
   {
     id: "e1",
-    title: "Regional Championship Weekend",
-    date: "March 2026",
+    title: "FIRST® Championship",
+    date: "April 29 - May 2, 2026",
     description:
-      "Full-pit execution: autonomous tuning between matches, scout sync, and alliance selection prep with clean data.",
-    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1200&h=675&fit=crop",
+      "The 2026 FIRST Championship is the culminating global robotics event of the 2025–2026 season,  at the George R. Brown Convention Center in Houston, Texas. It brings together top student teams from around the world to compete and celebrate STEM innovation.",
+    image: "https://community.firstinspires.org/hubfs/blog/frc/2026-first-championship-updates.jpg",
     tag: "Competition",
     featured: true,
   },
   {
     id: "e2",
-    title: "STEM Night Demo",
+    title: "2026 Kazakhstan Central Asia Championship",
     date: "February 2026",
     description:
-      "Interactive robot demo, CAD walkthrough station, and student Q&A with a focus on accessible explanations.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=500&fit=crop",
-    tag: "Outreach",
+      "The Central Asia Championship was the premier regional robotics competition for students (grades 7–12), held as the centerpiece of the Alem Tech Fest in Astana",
+    image: "https://www.nis.edu.kz/storage/news_gallery/01KHJXXJAWEW8GV8AGHHE72A3R.webp",
+    tag: "Competition",
   },
   {
     id: "e3",
-    title: "CAD Workshop Series",
+    title: "SPARKMIND HACKATON",
     date: "January 2026",
     description:
       "Three-part workshop: sketches to assemblies, design intent, and exporting for manufacture.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop",
+    image: sparkMind,
     tag: "Workshop",
   },
   {
     id: "e4",
-    title: "League Meet · Qualifier Block",
-    date: "December 2025",
+    title: "LADIES FIRST REGIONAL 2026",
+    date: "January 2026",
     description:
-      "Cycle consistency improvements, pit checklist hardening, and post-match video review.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=500&fit=crop",
+      "First Winning Aliance Captain. We have qualified for the Central Asia Championship.",
+    image: ladies,
     tag: "Competition",
   },
   {
     id: "e5",
-    title: "Mentor & Rookie Onboarding Lab",
-    date: "November 2025",
+    title: " Excursions for 6th graders",
+    date: "February 2026",
     description:
-      "Structured onboarding: safety, tools, Git workflow, and a first-week build task with review.",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop",
-    tag: "Workshop",
+      "Hosted a lab tour for 6th-grade students to showcase our development cycle. We demonstrated robot design, assembly, and testing processes to spark interest in engineering and recruit future innovators.",
+    image: sixGraders,
+    tag: "Inspire",
   },
 ];
 

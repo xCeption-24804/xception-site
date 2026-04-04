@@ -33,7 +33,7 @@ export function SponsorsSection() {
         ))}
       </Grid>
       <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-        <Button href="#contact">Request a sponsor deck</Button>
+        <Button to="/#contact">Request a sponsor deck</Button>
         <Button href={`mailto:${contact.email}`} variant="secondary">
           Email the team
         </Button>

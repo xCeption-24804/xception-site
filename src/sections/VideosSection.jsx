@@ -16,8 +16,8 @@ export function VideosSection() {
           Video
         </span>
       }
-      title="See the program in motion—tournament energy and a sponsor-ready story."
-      subtitle="The sponsor pitch is featured prominently. Tournament clips use muted hover previews so the page feels alive without hijacking audio."
+      title="Videos about us."
+      subtitle=""
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {highlighted.map((v, i) => (

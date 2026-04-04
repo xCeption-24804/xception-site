@@ -7,9 +7,9 @@ export function OutreachSection() {
   return (
     <SectionWrapper
       id="outreach"
-      eyebrow="Beyond the field"
-      title="Impact that compounds—STEM outreach and a culture of mentorship."
-      subtitle="We treat every demo and every rookie season as part of the same long-term product: a stronger team and a stronger community."
+      eyebrow="PLANS"
+      title="LONG-TERM PLANS"
+      subtitle=""
     >
       <Grid cols={3} gap="md">
         {outreach.map((o, i) => (

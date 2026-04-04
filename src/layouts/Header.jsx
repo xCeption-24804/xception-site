@@ -1,29 +1,41 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "../components/Logo";
 import { navLinks, teamName } from "../data/site";
 
+const linkClass = "rounded-full px-3 py-2 text-sm text-white/75 transition-colors hover:bg-white/5 hover:text-white";
+const linkActive = "bg-white/10 text-white";
+
+function isNavActive(pathname, hash, to) {
+  if (to === "/members") return pathname === "/members";
+  if (to === "/robot") return pathname === "/robot";
+  if (to.startsWith("/#")) return pathname === "/" && hash === to.slice(1);
+  return false;
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { pathname, hash } = useLocation();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-6xl px-[var(--spacing-section-x)] pt-4">
         <div className="glass-panel flex items-center justify-between gap-4 px-4 py-3 md:px-5">
-          <a href="#" className="flex items-center gap-3 text-white transition-opacity hover:opacity-90">
+          <Link to="/" className="flex items-center gap-3 text-white transition-opacity hover:opacity-90">
             <Logo />
             <span className="font-display text-lg font-bold tracking-tight">{teamName}</span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-full px-3 py-2 text-sm text-white/75 transition-colors hover:bg-white/5 hover:text-white"
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`${linkClass} ${isNavActive(pathname, hash, link.to) ? linkActive : ""}`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -65,14 +77,16 @@ export function Header() {
             >
               <ul className="flex flex-col py-2">
                 {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="block px-4 py-3 text-sm text-white/80 hover:bg-white/5 hover:text-white"
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className={`block px-4 py-3 text-sm hover:bg-white/5 hover:text-white ${
+                        isNavActive(pathname, hash, link.to) ? "bg-white/10 text-white" : "text-white/80"
+                      }`}
                       onClick={() => setOpen(false)}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
