@@ -2,6 +2,7 @@
   "name": "xception-website",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://dracs9.github.io/xception-site",
   "type": "module",
   "scripts": {
     "dev": "vite",
